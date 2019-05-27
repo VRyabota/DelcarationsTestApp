@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Test Application</string>
+
+    <string name="hint_note">Коментар</string>
+    <string name="hint_search">Пошук</string>
+    <string name="dialog_note_title">Введіть коментар</string>
+
+    <string name="drawer_search">Пошук</string>
+    <string name="drawer_saved">Збережені</string>
+
+    <string name="place_of_work_placeholder">Місце роботи: %1$s</string>
+    <string name="position_placeholder">Посада: %1$s</string>
+    <string name="placeholder_empty_result">Упс, нічого не знайдено…</string>
+
+    <string name="toolbar_title_search">Пошук декларацій</string>
+    <string name="toolbar_title_bookmarks">Збережені декларації</string>
+
+    <string name="dialog_save">Зберегти</string>
+</resources>

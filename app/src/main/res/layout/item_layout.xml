@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/layout_items_margin"
+    android:layout_marginTop="@dimen/layout_items_margin"
+    android:layout_marginRight="@dimen/layout_items_margin"
+    app:cardBackgroundColor="@color/colorBackground"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
+
+    <FrameLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/layout_padding">
+
+        <TextView
+            android:id="@+id/textSurname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/layout_items_side_margin"
+            android:lines="1"
+            android:textColor="@color/textOnBackground"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guidelineVertical"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Іванов" />
+
+        <TextView
+            android:id="@+id/textFirstName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_items_margin"
+            android:layout_marginRight="@dimen/layout_items_side_margin"
+            android:lines="1"
+            android:textColor="@color/textOnBackground"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@id/textSurname"
+            tools:text="Іван Іванович" />
+
+        <TextView
+            android:id="@+id/textWorkplace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_items_margin"
+            android:layout_marginRight="@dimen/layout_items_side_margin"
+            android:textColor="@color/textOnBackgroundSecondary"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@id/textFirstName"
+            tools:text="Місце роботи: Прем'єр-міністр України" />
+
+        <TextView
+            android:id="@+id/textPosition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_items_margin"
+            android:layout_marginRight="@dimen/layout_items_side_margin"
+            android:textColor="@color/textOnBackgroundSecondary"
+            android:textSize="@dimen/text_size_small"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@id/textWorkplace"
+            tools:text="Position: Lawyer"
+            tools:visibility="visible" />
+
+        <FrameLayout
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/layout_items_margin"
+            android:background="@color/colorDivider"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/textPosition"
+            tools:visibility="visible" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textNoteLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_items_margin"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_note"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:textColor="@color/textOnBackground"
+                android:textSize="@dimen/text_size_small" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/favourite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/favourite_border"
+            app:layout_constraintBottom_toTopOf="@id/openDocument"
+            app:layout_constraintLeft_toRightOf="@id/guidelineVertical"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/openDocument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/document"
+            app:layout_constraintBottom_toBottomOf="@id/divider"
+            app:layout_constraintLeft_toRightOf="@id/guidelineVertical"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/favourite" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
